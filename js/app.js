@@ -56,3 +56,11 @@ cliente('juan');
 // al mandar llamar la función sin parámetros se toman los parámetros por default declarados en la función
 cliente()
 
+////////////// ARROW FUNCTIONS //////////////////////////////////
+let viajando = (destino) => {
+    return `Viajando a ${destino}`;
+}
+
+let viaje = viajando('paris');
+console.log(viaje);
+/////////////////////////////////////////////////////////////////
