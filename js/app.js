@@ -93,16 +93,31 @@
 // console.log(nueva_tarea);
 // console.log(nueva_tarea.nombre);
 /////////////////////////////////////////////////////////////////
+// PROTOTYPES
+// function Tarea (nombre, urgencia){
+//     this.nombre = nombre;
+//     this.urgencia = urgencia;
+// }
 
-function Tarea (nombre, urgencia){
-    this.nombre = nombre;
-    this.urgencia = urgencia;
+// Tarea.prototype.mostrarInformacionTarea = function(){
+//     return `La tarea ${this.nombre} tiene una prioridad de ${this.urgencia}`;
+// }
+// const nueva_tarea = new Tarea('Aprender Javascript', 'urgente');
+
+// console.log(nueva_tarea);
+// console.log(nueva_tarea.mostrarInformacionTarea());
+
+/////////////////////////////////////////////////////////////////
+// DESTRUCTURING
+const aprendiendoJS = {
+    version: {
+        nueva: 'ES6',
+        anterior: 'ES5'
+    },
+    frameworks: ['React', 'Vue', 'Angular js']
 }
 
-Tarea.prototype.mostrarInformacionTarea = function(){
-    return `La tarea ${this.nombre} tiene una prioridad de ${this.urgencia}`;
-}
-const nueva_tarea = new Tarea('Aprender Javascript', 'urgente');
+let {version, frameworks} = aprendiendoJS;
 
-console.log(nueva_tarea);
-console.log(nueva_tarea.mostrarInformacionTarea());
+console.log(version);
+console.log(frameworks);
