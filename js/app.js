@@ -64,3 +64,31 @@ let viajando = (destino) => {
 let viaje = viajando('paris');
 console.log(viaje);
 /////////////////////////////////////////////////////////////////
+
+// Creando objetos /////////////////////////////////////////////
+// Objetos literales
+const persona = {
+    nombre: 'Juan',
+    profesion: 'Desarrollo web',
+    edad: 100
+}
+
+// maneras de acceder a los valores de objetos
+console.log(persona);
+console.log(persona.nombre);
+console.log(persona.profesion);
+console.log(persona.edad);
+console.log(persona['edad']);
+/////////////////////////////////////////////////////////////////
+
+// Object constructor
+function Tarea (nombre, urgencia){
+    this.nombre = nombre;
+    this.urgencia = urgencia;
+}
+
+
+const nueva_tarea = new Tarea('Aprender Javascript', 'urgente');
+
+console.log(nueva_tarea);
+console.log(nueva_tarea.nombre);
