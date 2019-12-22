@@ -109,15 +109,31 @@
 
 /////////////////////////////////////////////////////////////////
 // DESTRUCTURING
-const aprendiendoJS = {
-    version: {
-        nueva: 'ES6',
-        anterior: 'ES5'
-    },
-    frameworks: ['React', 'Vue', 'Angular js']
-}
+// const aprendiendoJS = {
+//     version: {
+//         nueva: 'ES6',
+//         anterior: 'ES5'
+//     },
+//     frameworks: ['React', 'Vue', 'Angular js']
+// }
 
-let {version, frameworks} = aprendiendoJS;
+// let {version, frameworks} = aprendiendoJS;
 
-console.log(version);
-console.log(frameworks);
+// console.log(version);
+// console.log(frameworks);
+/////////////////////////////////////////////////////////////////
+// Object literal enhancement
+const banda = 'Metallica';
+const genero = 'Rock';
+const canciones = ['Master on puppets', 'Seek & destroy'];
+
+// forma anterior de unir variables en un objeto
+// const metallica = {
+//     banda: banda,
+//     genero: genero,
+//     canciones: canciones
+// }
+// forma nueva de unir variables en un objeto
+const metallica = {banda, genero, canciones};
+
+console.log(metallica);
