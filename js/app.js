@@ -138,15 +138,30 @@
 
 // console.log(metallica);
 /////////////////////////////////////////////////////////////////
-// funciones en un objeto
+// // funciones en un objeto
+// const persona = {
+//     nombre: 'juan',
+//     trabajo: 'Desarrollo',
+//     edad: 500,
+//     musica: 'Rock',
+//     mostrarInformacion() {
+//         console.log(`${this.nombre} es ${this.trabajo} y su edad es ${this.edad}`);
+//     }
+// }
+
+// persona.mostrarInformacion();
+/////////////////////////////////////////////////////////////////
+// arreglos y .map 
+carrito = ['p1', 'p2', 'p3'];
+
+carrito.map(producto => {
+    console.log('El producto es ' + producto);
+})
+
 const persona = {
-    nombre: 'juan',
-    trabajo: 'Desarrollo',
-    edad: 500,
-    musica: 'Rock',
-    mostrarInformacion() {
-        console.log(`${this.nombre} es ${this.trabajo} y su edad es ${this.edad}`);
-    }
+    nombre: 'Juan',
+    profesion: 'Desarrollo',
+    edad: 500
 }
 
-persona.mostrarInformacion();
+console.log(Object.keys(persona));
