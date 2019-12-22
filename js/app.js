@@ -151,17 +151,52 @@
 
 // persona.mostrarInformacion();
 /////////////////////////////////////////////////////////////////
-// arreglos y .map 
-carrito = ['p1', 'p2', 'p3'];
+// // arreglos y .map 
+// carrito = ['p1', 'p2', 'p3'];
 
-carrito.map(producto => {
-    console.log('El producto es ' + producto);
-})
+// carrito.map(producto => {
+//     console.log('El producto es ' + producto);
+// })
 
-const persona = {
-    nombre: 'Juan',
-    profesion: 'Desarrollo',
-    edad: 500
+// const persona = {
+//     nombre: 'Juan',
+//     profesion: 'Desarrollo',
+//     edad: 500
+// }
+
+// console.log(Object.keys(persona));
+/////////////////////////////////////////////////////////////////7
+// spread operator ayuda a combinar dos arreglos diferentes
+let lenguajes = ['javascrip', 'php'];
+let frameworks = ['React', 'Laravel'];
+
+// unir los arreglos antigua forma pero aún válida
+// let combinacion = lenguajes.concat(frameworks);
+// console.log(combinacion);
+
+// nueva forma de unir arreglos
+// let combinacion = [...lenguajes, ...frameworks];
+// console.log(combinacion);
+
+// o crear una copia de otro arreglo
+// let nuevoArreglo = [...lenguajes];
+// console.log(nuevoArreglo);
+
+// obtener el ultimo elemento de un arreglo con reverse() pero voltea el arreglo original
+// let [ultimo] = lenguajes.reverse();
+
+// console.log(ultimo);
+
+// obtiene el ultimo elemento del arreglo pero con spread operator trabaja sobre una copia y no 
+// cambia el arreglo original
+// let [ultimo] = [...lenguajes].reverse();
+
+// console.log(ultimo);
+
+function suma(a,b,c,){
+    console.log(a+b+c);
 }
 
-console.log(Object.keys(persona));
+const numeros = [1,2,3];
+
+suma(...numeros)
