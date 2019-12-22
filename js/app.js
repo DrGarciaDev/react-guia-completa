@@ -122,18 +122,31 @@
 // console.log(version);
 // console.log(frameworks);
 /////////////////////////////////////////////////////////////////
-// Object literal enhancement
-const banda = 'Metallica';
-const genero = 'Rock';
-const canciones = ['Master on puppets', 'Seek & destroy'];
+// // Object literal enhancement
+// const banda = 'Metallica';
+// const genero = 'Rock';
+// const canciones = ['Master on puppets', 'Seek & destroy'];
 
-// forma anterior de unir variables en un objeto
-// const metallica = {
-//     banda: banda,
-//     genero: genero,
-//     canciones: canciones
-// }
-// forma nueva de unir variables en un objeto
-const metallica = {banda, genero, canciones};
+// // forma anterior de unir variables en un objeto
+// // const metallica = {
+// //     banda: banda,
+// //     genero: genero,
+// //     canciones: canciones
+// // }
+// // forma nueva de unir variables en un objeto
+// const metallica = {banda, genero, canciones};
 
-console.log(metallica);
+// console.log(metallica);
+/////////////////////////////////////////////////////////////////
+// funciones en un objeto
+const persona = {
+    nombre: 'juan',
+    trabajo: 'Desarrollo',
+    edad: 500,
+    musica: 'Rock',
+    mostrarInformacion() {
+        console.log(`${this.nombre} es ${this.trabajo} y su edad es ${this.edad}`);
+    }
+}
+
+persona.mostrarInformacion();
