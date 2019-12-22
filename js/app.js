@@ -233,22 +233,51 @@ let frameworks = ['React', 'Laravel'];
 
 // console.log(total / personas.length);
 //////////////////////////////////////////////////////////////////////////////////
-// Promise 
-const aplicarDescuento = new Promise ((resolve, reject) =>{
-    setTimeout(() => {
-        let descuento = true;
+// // Promise 
+// const aplicarDescuento = new Promise ((resolve, reject) =>{
+//     setTimeout(() => {
+//         let descuento = true;
 
-        if (descuento) {
-            resolve('Descuento aplicado');
+//         if (descuento) {
+//             resolve('Descuento aplicado');
+//         }else{
+//             reject('No se aplicó el descuento');
+//         }
+//     }, 3000);
+// });
+
+// aplicarDescuento.then(resultado =>{
+//     console.log(resultado);
+// })
+// .catch(error =>{
+//     console.log(error);
+// })
+////////////////////////////////////////////////////////////////////////////////////
+// promise con AJAX
+const descargarUsuarios = cantidad => new Promise((resolve, reject) => {
+    const api = `https://randomuser.me/api/?results= ${cantidad}&nat=us`;
+
+    // llamando AJAX
+    const xhr = new XMLHttpRequest();
+    // llamado ajax
+    xhr.open('GET', api, true);
+    // abrir la conección 
+    xhr.onload = () => {
+        if (xhr.status === 200) {
+            resolve(JSON.parse(xhr.responseText).results);
         }else{
-            reject('No se aplicó el descuento');
+            reject(Error(xhr.statusText))
         }
-    }, 3000);
+    }
+    // opcional 
+    xhr.onerror = (error) => reject(error);
+    // enviar
+    xhr.send();
+
 });
 
-aplicarDescuento.then(resultado =>{
-    console.log(resultado);
-})
-.catch(error =>{
-    console.log(error);
-})
+descargarUsuarios(10)
+.then(
+    miembros => console.log(miembros),
+    error => console.log(new Error('Hubo un error '+ error ))
+);
