@@ -201,34 +201,54 @@ let frameworks = ['React', 'Laravel'];
 
 // suma(...numeros);
 /////////////////////////////////////////////////////////////////////////////////
-// filter, find y reduce, y más metodos para arreglos
-const personas = [
-    {nombre:'Luis',edad: 20},
-    {nombre:'pedro',edad: 12},
-    {nombre:'karen',edad: 25},
-    {nombre:'pepe',edad: 22},
-    {nombre:'juan',edad: 23},
-];
+// // filter, find y reduce, y más metodos para arreglos
+// const personas = [
+//     {nombre:'Luis',edad: 20},
+//     {nombre:'pedro',edad: 12},
+//     {nombre:'karen',edad: 25},
+//     {nombre:'pepe',edad: 22},
+//     {nombre:'juan',edad: 23},
+// ];
 
-// filtra mayores de 20
+// // filtra mayores de 20
 
-const mayores = personas.filter(persona =>{
-    return persona.edad > 20;
+// const mayores = personas.filter(persona =>{
+//     return persona.edad > 20;
+// });
+
+// console.log(mayores);
+
+// // encuentra 
+
+// const karen = personas.find(persona => {
+//     return persona.nombre === 'karen';
+// });
+
+// console.log(karen);
+
+// // reduce hace sumatoria
+// let total = personas.reduce((edadTotal, persona) => {
+//     return edadTotal + persona.edad;
+// }, 0);
+
+// console.log(total / personas.length);
+//////////////////////////////////////////////////////////////////////////////////
+// Promise 
+const aplicarDescuento = new Promise ((resolve, reject) =>{
+    setTimeout(() => {
+        let descuento = true;
+
+        if (descuento) {
+            resolve('Descuento aplicado');
+        }else{
+            reject('No se aplicó el descuento');
+        }
+    }, 3000);
 });
 
-console.log(mayores);
-
-// encuentra 
-
-const karen = personas.find(persona => {
-    return persona.nombre === 'karen';
-});
-
-console.log(karen);
-
-// reduce hace sumatoria
-let total = personas.reduce((edadTotal, persona) => {
-    return edadTotal + persona.edad;
-}, 0);
-
-console.log(total / personas.length);
+aplicarDescuento.then(resultado =>{
+    console.log(resultado);
+})
+.catch(error =>{
+    console.log(error);
+})
