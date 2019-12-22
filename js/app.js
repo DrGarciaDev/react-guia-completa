@@ -193,10 +193,42 @@ let frameworks = ['React', 'Laravel'];
 
 // console.log(ultimo);
 
-function suma(a,b,c,){
-    console.log(a+b+c);
-}
+// function suma(a,b,c,){
+//     console.log(a+b+c);
+// }
 
-const numeros = [1,2,3];
+// const numeros = [1,2,3];
 
-suma(...numeros)
+// suma(...numeros);
+/////////////////////////////////////////////////////////////////////////////////
+// filter, find y reduce, y más metodos para arreglos
+const personas = [
+    {nombre:'Luis',edad: 20},
+    {nombre:'pedro',edad: 12},
+    {nombre:'karen',edad: 25},
+    {nombre:'pepe',edad: 22},
+    {nombre:'juan',edad: 23},
+];
+
+// filtra mayores de 20
+
+const mayores = personas.filter(persona =>{
+    return persona.edad > 20;
+});
+
+console.log(mayores);
+
+// encuentra 
+
+const karen = personas.find(persona => {
+    return persona.nombre === 'karen';
+});
+
+console.log(karen);
+
+// reduce hace sumatoria
+let total = personas.reduce((edadTotal, persona) => {
+    return edadTotal + persona.edad;
+}, 0);
+
+console.log(total / personas.length);
