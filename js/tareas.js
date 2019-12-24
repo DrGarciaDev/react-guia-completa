@@ -16,17 +16,6 @@ export default class Tarea{
     }
 }
 
-class ComprasPendientes extends Tarea {
-    constructor(nombre, prioridad, cantidad){
-        super(nombre, prioridad);
-        this.cantidad = cantidad;
-    }
-    mostrar(){
-        super.mostrar();
-        console.log(` y la cantidad de ${this.cantidad}`);
-    }
-}
-
 // let tarea1 = new Tarea('Aprendiendo javascript', 'Alta');
 // let tarea2 = new Tarea('Aprendiendo python', 'Alta');
 
