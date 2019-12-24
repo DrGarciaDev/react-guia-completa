@@ -254,50 +254,68 @@ let frameworks = ['React', 'Laravel'];
 // })
 ////////////////////////////////////////////////////////////////////////////////////
 // promise con AJAX
-const descargarUsuarios = cantidad => new Promise((resolve, reject) => {
-    const api = `https://randomuser.me/api/?results= ${cantidad}&nat=us`;
+// const descargarUsuarios = cantidad => new Promise((resolve, reject) => {
+//     const api = `https://randomuser.me/api/?results= ${cantidad}&nat=us`;
 
-    // llamando AJAX
-    const xhr = new XMLHttpRequest();
-    // llamado ajax
-    xhr.open('GET', api, true);
-    // abrir la conección 
-    xhr.onload = () => {
-        if (xhr.status === 200) {
-            resolve(JSON.parse(xhr.responseText).results);
-        }else{
-            reject(Error(xhr.statusText))
-        }
+//     // llamando AJAX
+//     const xhr = new XMLHttpRequest();
+//     // llamado ajax
+//     xhr.open('GET', api, true);
+//     // abrir la conección 
+//     xhr.onload = () => {
+//         if (xhr.status === 200) {
+//             resolve(JSON.parse(xhr.responseText).results);
+//         }else{
+//             reject(Error(xhr.statusText))
+//         }
+//     }
+//     // opcional 
+//     xhr.onerror = (error) => reject(error);
+//     // enviar
+//     xhr.send();
+
+// });
+
+// descargarUsuarios(10)
+// .then(
+//     miembros => imprimirHTML(miembros),
+//     error => console.log(new Error('Hubo un error '+ error ))
+// );
+
+// function imprimirHTML(usuarios){
+//     // console.log(usuarios);
+//     let html = '';
+//     usuarios.forEach(usuario => {
+//         // console.log(usuario);
+//         html += `
+//             <li>
+//                 Nombre: ${usuario.name.first} ${usuario.name.last}
+//                 País:   ${usuario.nat}
+//                 Imagen: 
+//                         <img src="${usuario.picture.medium}">
+//             </li>
+//         `;
+//     });
+
+//     const contenedorApp = document.querySelector('#app');
+//     contenedorApp.innerHTML = html;
+// }
+///////////////////////////////////////////////////////////////////////////////
+// Programación orientada a objetos
+// Clases
+class Tarea{
+    constructor(nombre, prioridad){
+        this.nombre = nombre;
+        this.prioridad = prioridad;
     }
-    // opcional 
-    xhr.onerror = (error) => reject(error);
-    // enviar
-    xhr.send();
-
-});
-
-descargarUsuarios(10)
-.then(
-    miembros => imprimirHTML(miembros),
-    error => console.log(new Error('Hubo un error '+ error ))
-);
-
-function imprimirHTML(usuarios){
-    // console.log(usuarios);
-    let html = '';
-    usuarios.forEach(usuario => {
-        // console.log(usuario);
-        html += `
-            <li>
-                Nombre: ${usuario.name.first} ${usuario.name.last}
-                País:   ${usuario.nat}
-                Imagen: 
-                        <img src="${usuario.picture.medium}">
-            </li>
-        `;
-    });
-
-    const contenedorApp = document.querySelector('#app');
-    contenedorApp.innerHTML = html;
+    // metodos
+    mostrar(){
+        return `${this.nombre} tiene una prioridad ${this.prioridad}`;
+    }
 }
 
+let tarea1 = new Tarea('Aprendiendo javascript', 'Alta');
+let tarea2 = new Tarea('Aprendiendo python', 'Alta');
+
+console.log(tarea1.mostrar());
+console.log(tarea2.mostrar());
