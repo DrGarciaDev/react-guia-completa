@@ -1,3 +1,7 @@
-import {nombreTarea} from './tareas.js';
+import {nombreTarea, crearTarea} from './tareas.js';
 
 console.log(nombreTarea);
+
+const tarea1 = crearTarea('Pasear al perro', 'Media');
+
+console.log(tarea1);

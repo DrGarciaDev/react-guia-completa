@@ -1,6 +1,9 @@
 export const nombreTarea = 'pasear al perro';
 
 // export default nombreTarea;
+export const crearTarea = (tarea, urgencia) => {
+    return `La tarea ${tarea} tiene una urgencia de ${urgencia}`;
+}
 
 class Tarea{
     constructor(nombre, prioridad){
